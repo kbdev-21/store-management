@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "223925672259",
+    "project_id": "store-management-56539",
+    "storage_bucket": "store-management-56539.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223925672259:android:d9c0df55fe3de2bdf837f6",
+        "android_client_info": {
+          "package_name": "com.example.shop_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqVji-o3TZGs9Mt3QMnGCHcYyi82mOwvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
