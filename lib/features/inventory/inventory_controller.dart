@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_management/features/inventory/create_inventory_dialog.dart';
 import 'package:shop_management/features/product/product_page.dart';
+import 'package:shop_management/models/customer.dart';
 import 'package:shop_management/models/product.dart';
+import 'package:shop_management/repository/customer_repo.dart';
 import 'package:shop_management/repository/product_repo.dart';
 
 class InventoryController extends GetxController {
   final ProductRepo _productRepo = ProductRepo();
+  final CustomerRepo _customerRepo = CustomerRepo();
 
   List<Product> products = [];
   final TextEditingController nameController = TextEditingController();
@@ -18,6 +21,7 @@ class InventoryController extends GetxController {
   void onInit() {
     super.onInit();
     getProducts();
+    getCustomer();
   }
   void onAddButtonClick() {
     Get.dialog(CreateInventoryDialog());
@@ -47,5 +51,8 @@ class InventoryController extends GetxController {
     getProducts();
   }
 
-  
+  Future<void> getCustomer() async {
+    List<Customer> customers = await _customerRepo.getAllCustomer();
+    print(customers[0].address.toString());
+  }
 }
