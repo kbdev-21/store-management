@@ -4,13 +4,15 @@ import 'package:shop_management/features/home/home_binding.dart';
 import 'package:shop_management/features/home/home_view.dart';
 import 'package:shop_management/features/inventory/inventory_binding.dart';
 import 'package:shop_management/features/inventory/inventory_page.dart';
+import 'package:shop_management/features/order/order_binding.dart';
+import 'package:shop_management/features/order/order_view.dart';
 
 class NavigatorController extends GetxController {
   static NavigatorController get to => Get.find();
 
   var currentIndex = 0.obs;
 
-  final pages = <String>['/home', '/inventory', '/home'];
+  final pages = <String>['/home', '/inventory', '/order', '/home'];
 
   void changePage(int index) {
     currentIndex.value = index;
@@ -31,6 +33,14 @@ class NavigatorController extends GetxController {
         settings: settings,
         page: () => InventoryPage(),
         binding: InventoryBinding(),
+        transition: Transition.noTransition,
+      );
+    }
+    if (settings.name == '/order') {
+      return GetPageRoute(
+        settings: settings,
+        page: () => OrderPage(),
+        binding: OrderBinding(),
         transition: Transition.noTransition,
       );
     }

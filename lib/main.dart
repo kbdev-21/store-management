@@ -9,6 +9,8 @@ import 'package:shop_management/features/navigator/navigator_binding.dart';
 import 'package:shop_management/features/navigator/navigator_view.dart';
 import 'package:shop_management/features/product/product_binding.dart';
 import 'package:shop_management/features/product/product_page.dart';
+import 'package:shop_management/features/order/order_binding.dart';
+import 'package:shop_management/features/order/order_view.dart';
 import 'package:shop_management/firebase_options.dart';
 
 void main() async {
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: '/navigator',
-          page: () => NavigatorView(),
+          page: () => const NavigatorView(),
           binding: NavigatorBinding(),
         ),
         GetPage(
@@ -38,14 +40,18 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/inventory',
-          page: () => InventoryPage(),
+          page: () => const InventoryPage(),
           binding: InventoryBinding(),
         ),
         GetPage(
-          name: '/product',
-          page: () => ProductPage(),
-          binding: ProductBinding()
-        )
+          name: '/order',
+          page: () => const OrderPage(),
+          binding: OrderBinding(),
+        ),
+        GetPage(
+            name: '/product',
+            page: () => const ProductPage(),
+            binding: ProductBinding())
         // Add other routes here
       ],
     );

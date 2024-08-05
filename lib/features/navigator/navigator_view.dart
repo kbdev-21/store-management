@@ -40,6 +40,10 @@ class NavigatorView extends GetWidget<NavigatorController> {
             label: 'Inventory',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.analytics),
+            label: 'Order',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
           ),
@@ -53,7 +57,7 @@ class NavigatorView extends GetWidget<NavigatorController> {
 
   Widget _sideNavBar() {
     return Container(
-      width: 120,
+      width: 280,
       child: Drawer(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.zero,
@@ -74,6 +78,11 @@ class NavigatorView extends GetWidget<NavigatorController> {
               ),
               _navItem(
                 index: 2,
+                icon: Icons.analytics,
+                label: 'Order',
+              ),
+              _navItem(
+                index: 3,
                 icon: Icons.settings,
                 label: 'Settings',
               ),

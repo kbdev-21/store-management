@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:shop_management/common/enums.dart';
+//import 'package:shop_management/common/enums.dart';
 
 class Product {
   String? id;
@@ -12,19 +12,19 @@ class Product {
   int? sold;
   bool? isActive;
 
-  Product({
-    this.id,
-    this.name,
-    this.description,
-    this.category,
-    this.price,
-    this.quantity,
-    this.imgUrl,
-    this.sold,
-    this.isActive
-  });
+  Product(
+      {this.id,
+      this.name,
+      this.description,
+      this.category,
+      this.price,
+      this.quantity,
+      this.imgUrl,
+      this.sold,
+      this.isActive});
 
-  factory Product.fromFirestore(DocumentSnapshot<Map<String, dynamic>> snapshot) {
+  factory Product.fromFirestore(
+      DocumentSnapshot<Map<String, dynamic>> snapshot) {
     final data = snapshot.data();
 
     return Product(
@@ -53,5 +53,4 @@ class Product {
       'isActive': isActive
     };
   }
-
 }
